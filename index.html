@@ -390,6 +390,32 @@
     line-height:1.65;
   }
 
+  /* ===================== PROJECTS ===================== */
+  .projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:var(--space-4);
+  }
+  .project-card{
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    padding:var(--space-4);
+    display:flex;
+    flex-direction:column;
+    gap:var(--space-3);
+    transition:transform .15s ease, border-color .15s ease;
+  }
+  .project-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--accent);
+  }
+  .project-title{font-size:1.2rem;}
+  .project-desc{color:var(--text-muted);font-size:.96rem;}
+  .project-card .tags{margin-top:auto;}
+  .project-links{display:flex;flex-wrap:wrap;gap:.6rem;}
+  .project-links .btn{padding:.55rem 1rem;font-size:.82rem;}
+
   /* ===================== SKILLS ===================== */
   .skills-grid{
     display:grid;
@@ -500,6 +526,7 @@
     html{scroll-behavior:auto;}
     .cursor{animation:none;}
     .btn{transition:none;}
+    .project-card{transition:none;}
   }
 </style>
 </head>
@@ -514,6 +541,7 @@
     <ul class="nav-links">
       <li><a href="#home">home</a></li>
       <li><a href="#experience">experience</a></li>
+      <li><a href="#projects">projects</a></li>
       <li><a href="#skills">skills</a></li>
       <li><a href="#education">education</a></li>
       <li><a href="#contact">contact</a></li>
@@ -630,6 +658,32 @@
     </div>
   </section>
 
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" class="container">
+    <div class="section-head">
+      <p class="eyebrow">// projects</p>
+      <h2>side projects</h2>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <h3 class="project-title">Queuing App</h3>
+        <p class="project-desc">
+          A queueing web app that visualizes the line in 3D, with miniature people
+          standing in queue as it moves.
+        </p>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">React Three Fiber</span>
+          <span class="tag">Firebase</span>
+        </div>
+        <div class="project-links">
+          <a class="btn btn-primary" href="https://queuing-app-fb9ee.web.app" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <!-- ===================== SKILLS ===================== -->
   <section id="skills" class="container">
     <div class="section-head">
@@ -656,6 +710,8 @@
         <p class="skill-cat">frontend</p>
         <div class="tags">
           <span class="tag">JavaScript</span>
+          <span class="tag">React</span>
+          <span class="tag">React Three Fiber</span>
           <span class="tag">jQuery</span>
           <span class="tag">Vue.js (minor contributions)</span>
           <span class="tag">CSS</span>
@@ -669,6 +725,7 @@
           <span class="tag">MySQL</span>
           <span class="tag">MySQL Workbench</span>
           <span class="tag">Laravel Eloquent</span>
+          <span class="tag">Firebase</span>
         </div>
       </div>
 
